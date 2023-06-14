@@ -1,5 +1,5 @@
 import React from 'react';
-import { Load } from '@lusf/lykang';
+import { Load } from '@xdf/daxue-web';
 
 export default () => (
   <div>

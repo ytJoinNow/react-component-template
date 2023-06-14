@@ -1,8 +1,8 @@
 {
-  "name": "lusf",
+  "name": "daxue-design",
   "version": "1.0.0",
   "private": true,
-  "description": "A React components for the web.",
+  "description": "React大学组件服务，提供的大学常用组件",
   "workspaces": [
     "packages/*"
   ],
@@ -15,15 +15,13 @@
     "bundle": "lerna run --parallel bundle",
     "compile": "lerna run compile",
     "clean": "lerna run --parallel clean",
-    "dev:lykang": "lerna run --parallel --scope \"@lusf/lykang\" dev",
-    "build:lykang": "lerna run --parallel --scope \"@lusf/lykang\" build",
-    "serve:lykang": "lerna run --parallel --scope \"@lusf/lykang\" serve",
     "format": "prettier --write \"**/*.{js,jsx,tsx,ts,scss,md,json}\"",
     "format-check": "prettier --check \"**/*.{js,jsx,tsx,ts,scss,md,json}\"",
-    "lint:lykang": "yarn lint:eslint:lykang && yarn lint:stylelint:lykang",
-    "lint:eslint:lykang": "eslint -c .eslintrc.js --ext .ts,.tsx,.js ./packages/lykang/src --fix",
-    "lint:stylelint:lykang": "stylelint ./packages/lykang/src/**/*.{html,css,scss} --fix",
-    "commit": "git-cz"
+    "lint": "yarn lint:eslint && yarn lint:stylelint",
+    "lint:eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js ./packages/**/src --fix",
+    "lint:stylelint": "stylelint ./packages/**/src/**/*.{html,css,scss} --fix",
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "husky": {
     "hooks": {
@@ -34,7 +32,7 @@
   "lint-staged": {
     "*.ts?(x)": [
       "prettier --write",
-      "yarn lint:eslint:lykang"
+      "yarn lint:eslint"
     ],
     "*.{scss,css}": [
       "stylelint --fix"
@@ -59,6 +57,7 @@
     "commitizen": "^4.2.4",
     "dart-sass": "^1.25.0",
     "dumi": "^1.1.30",
+    "dumi-theme-mobile": "^1.1.7",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",

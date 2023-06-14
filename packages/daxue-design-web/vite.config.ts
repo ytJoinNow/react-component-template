@@ -9,18 +9,16 @@ export default defineConfig({
     alias: {
       '@/': path.resolve(__dirname, 'src'),
       '@/components': path.resolve(__dirname, 'src/components'),
-      '@/router': path.resolve(__dirname, 'src/router'),
-      '@/pages': path.resolve(__dirname, 'src/pages'),
     },
   },
   // 引用全局 scss
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "@alifd/theme-epweb-default/variables.scss";`,
-      },
-    },
-  },
+  // css: {
+  //   preprocessorOptions: {
+  //     scss: {
+  //       additionalData: `@import "@alifd/theme-epweb-default/variables.scss";`,
+  //     },
+  //   },
+  // },
   build: {
     cssCodeSplit: true,
     sourcemap: false, //是否构建source map 文件
@@ -33,16 +31,12 @@ export default defineConfig({
     },
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'lykang',
-      fileName: format => `lykang.${format}.js`,
+      name: 'components',
+      fileName: format => `pc.${format}.js`,
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
       external: ['react', 'react-dom', 'react-router-dom'],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
         globals: {
           react: 'react',
           'react-dom': 'react-dom',
@@ -55,15 +49,7 @@ export default defineConfig({
   optimizeDeps: {
     include: [],
   },
-  plugins: [
-    react(),
-    // viteSvgIcons({
-    //   // Specify the icon folder to be cached
-    //   iconDirs: [path.resolve(__dirname, 'src/icons')],
-    //   // Specify symbolId format
-    //   symbolId: 'icon-[dir]-[name]',
-    // }),
-  ],
+  plugins: [react()],
   server: {
     port: 8080, // 开发环境启动的端口
     proxy: {

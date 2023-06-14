@@ -1,0 +1,50 @@
+{
+  "name": "@xdf/daxue-web",
+  "version": "1.0.0",
+  "description": "大学移动端components服务",
+  "keywords": [
+    "mobile",
+    "component"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  },
+  "author": "yantao <1772031746@qq.com>",
+  "homepage": "https://github.com/ytJoinNow/react-component-template#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "exports": {
+    ".": {
+      "require": "./lib/daxue-web.umd.js",
+      "import": "./lib/daxue-web.es.js"
+    }
+  },
+  "devDependencies": {
+    "@alifd/next": "^1.23.25",
+    "@types/react": "^17.0.29",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.1",
+    "@vitejs/plugin-react": "^1.0.4",
+    "classnames": "^2.3.1",
+    "moment": "^2.29.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "sass": "^1.43.2",
+    "typescript": "^4.4.4",
+    "vite": "^2.6.7",
+    "vite-plugin-svg-icons": "^1.0.5"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "http://npm.koolearn.com/"
+  }
+}

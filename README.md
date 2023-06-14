@@ -1,50 +1,20 @@
-lusf react component lib
-
-```bash
-# 安装lerna
-$ yarn global add lerna
-$ npm i lerna -g
-```
-
-```bash
-# 安装依赖
-# 会把所有包的依赖安装到根node_modules
-$ lerna bootstrap
-```
-
-```bash
-# 增加本地或者远程package做为当前项目packages里面的依赖
-# --dev devDependencies 替代 dependencies
-# --exact 安装准确版本，就是安装的包版本前面不带^, Eg: "^2.20.0" ➜ "2.20.0"
-$ lerna add <package>[@version] [--dev] [--exact] --scope scopeName
-# 例：lerna add lodash --scope @lusf/lykang
-```
-
-```bash
-# 删除所有包的node_modules目录
-$ lerna clean
-```
-
-```bash
-# 列出下次发版lerna publish 要更新的包
-# 原理：
-# 需要先git add,git commit 提交。
-# 然后内部会运行git diff --name-only v版本号 ，搜集改动的包，就是下次要发布的。并不是网上人说的所有包都是同一个版全发布。
-$ lerna changed
-```
-
-```bash
-# git 提交
-$ yarn commit
-```
-
-```bash
-# 编译lykang组件库
-$ yarn build:lykang
-```
-
-```bash
-# 发布
-# 会打tag，上传git,上传npm
-$ lerna publish
-```
+---
+title: 首页
+hero:
+  title: 新东方大学组件库项目
+  desc: 🏆 使用 React + TypeScript 打造自己的 UI 组件库
+  actions:
+    - text: 开始使用
+      link: /web/components/load
+features:
+  - icon: https://gw.alipayobjects.com/zos/bmw-prod/881dc458-f20b-407b-947a-95104b5ec82b/k79dm8ih_w144_h144.png
+    title: 开箱即用
+    desc: 使用方式简单，项目长期维护，并在开发中不断探索最佳实践
+  - icon: https://gw.alipayobjects.com/zos/bmw-prod/d60657df-0822-4631-9d7c-e7a869c2f21c/k79dmz3q_w126_h126.png
+    title: React 进阶必备
+    desc: 使用 React Hook 打造自己的组件库，React 进阶学习的必经之路
+  - icon: https://gw.alipayobjects.com/os/q/cms/images/k9zij2bh/67f75d56-0d62-47d6-a8a5-dbd0cb79a401_w96_h96.png
+    title: TypeScript
+    desc: 代码全部使用 TypeScript 开发，提供完整的组件和 API 类型定义
+footer: MIT Licensed | Copyright © 2021<br />Powered by [dumi](https://d.umijs.org)
+---

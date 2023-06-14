@@ -1,29 +1,37 @@
 import { defineConfig } from 'dumi';
 import path from 'path';
 
-const global_sass = path.resolve(__dirname, 'node_modules/@alifd/theme-epweb-default/variables.scss');
-const repo = 'lykang';
+const globalSass = path.resolve(__dirname, 'node_modules/@alifd/theme-epweb-default/variables.scss');
+
+const xdfLogo = "/logo";
 
 export default defineConfig({
   title: ' ',
-  favicon: '/logo.png',
-  logo: '/logo.png',
-  base: `/${repo}/`,
-  publicPath: `/${repo}/`,
+  favicon: xdfLogo,
+  logo: xdfLogo,
+  base: `/`,
+  publicPath: `/`,
   outputPath: 'docs-dist',
   mode: 'site',
   hash: true,
   exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
   resolve: {
-    includes: ['docs', 'packages'],
+    includes: ['packages/daxue-design-mobile/src', 'packages/daxue-design-web/src'],
   },
   navs: [
-    null,
-    {
-      title: 'Git',
-      path: 'https://github.com/complicated2018/react-component-template.git',
-    },
+    null
   ],
+  themeConfig: {
+    carrier: '新东方',
+    deviceWidth: 375,
+    hd: {
+      // umi-hd 的 750 高清方案（默认值）
+      rules: [
+        { maxWidth: 375, mode: 'vw', options: [100, 750] },
+        { minWidth: 376, maxWidth: 750, mode: 'vw', options: [100, 1500] }
+      ],
+    }
+  },
   nodeModulesTransform: {
     type: 'none',
   },
@@ -36,7 +44,7 @@ export default defineConfig({
         .use('sass-resources-loader')
         .loader('sass-resources-loader')
         .options({
-          resources: global_sass,
+          resources: globalSass,
         })
         .end();
     });

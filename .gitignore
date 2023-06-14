@@ -3,6 +3,7 @@ node_modules
 .DS_Store
 docs-dist
 dist
+.history
 dist-ssr
 *.local
 

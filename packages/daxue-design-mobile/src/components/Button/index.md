@@ -1,13 +1,15 @@
 ---
-title: Load 加载效果
-group:
-  title: Load 加载效果
+title: Load
+group: 
+  title: 业务组件
+  path: /business
+  order: 2
 nav:
-  title: '组件'
-  path: /components
+  title: '移动端组件'
+  path: /mobile
 ---
 
-## Load
+## 示例
 
 Demo:
 
